@@ -29,7 +29,7 @@ build_kableExtra <- function(tab,
     # kable object type based on output 
     if ((output == 'latex') | (ext == 'tex')) {
         tab <- kableExtra::kable(tab, format = 'latex', caption = title,
-                                 booktabs = TRUE, linesep = "")
+                                 booktabs = TRUE, linesep = "", escape = FALSE)
 
     } else if ((output == 'markdown') | (ext %in% c('md', 'txt'))) {
         tab <- kableExtra::kable(tab, format = 'markdown', caption = title)
